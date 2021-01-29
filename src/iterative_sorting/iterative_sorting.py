@@ -1,26 +1,46 @@
-# TO-DO: Complete the selection_sort() function below
+# TO-DO: Complete the selection_sort() function below big O - O(n2)
 def selection_sort(arr):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
         cur_index = i
         smallest_index = cur_index
-        # TO-DO: find next smallest element
-        # (hint, can do in 3 loc)
-        # Your code here
 
+        # TO-DO: find next smallest element
+        # (hint, can do in 3 loc (lines of code))
+        # Your code here
+        for loop in range(cur_index,len(arr)):
+            if arr[loop] < arr[smallest_index]:
+                smallest_index = loop
 
         # TO-DO: swap
         # Your code here
-
+        arr[i], arr[smallest_index] = arr[smallest_index], arr[i]
     return arr
 
 
-# TO-DO:  implement the Bubble Sort function below
+# TO-DO:  implement the Bubble Sort function below big O - O(n2)
 def bubble_sort(arr):
     # Your code here
-
+    bub = True
+    while bub:
+        bub = 0
+        for index, item in enumerate(arr):
+            if index + 1 < len(arr):
+                if arr[index + 1] < item:
+                    arr[index], arr[index + 1] = arr[index + 1], arr[index]
+                    bub += 1
 
     return arr
+bubble_sort([3,56,7,2,7])
+#as long everything is true it will run
+#true is = 0
+#index, the item will go 1 by 1 in the array
+#if the index + 1 is less then the length in the array 
+#if the array postion is the index +1  is less then the item
+#then if the arrays index, and arrays index + 1 same as arrays index + 1, arrays index
+# 0 += 1
+#then return the arr
+
 
 '''
 STRETCH: implement the Counting Sort function below
